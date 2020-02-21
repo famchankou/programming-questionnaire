@@ -3,6 +3,7 @@ import {
   REGISTRATION_SUCCESS,
   REGISTRATION_FAILURE,
 } from './types';
+import { push } from 'connected-react-router';
 import api from 'services/api';
 
 export const registrationFlow = ({ username, email, password }) => {
@@ -11,6 +12,7 @@ export const registrationFlow = ({ username, email, password }) => {
     try {
       await api.post('/api/v1/user', { username, email, password });
       dispatch(registrationSuccess());
+      dispatch(push('/login'));
     } catch (error) {
       dispatch(registrationFailure(error));
     }

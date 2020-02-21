@@ -7,14 +7,20 @@ import api from 'services/api';
 import history from './history';
 import rootReducer from './reducer';
 
-const { getToken } = auth;
+const { getToken, decodeToken } = auth;
 
 const initialInfo = () => {
   const token = getToken();
   if (token) {
+    const { id, username, email } = decodeToken(token);
     api.setAuthTokenToHeader(token);
     return {
       auth: {
+        user: {
+          id,
+          username,
+          email,
+        },
         isRequesting: false,
         isAuth: true,
       },
