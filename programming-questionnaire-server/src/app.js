@@ -21,6 +21,11 @@ app.use(parseCookie);
 
 app.use(`/api/${apiVersion}/user`, routes.user);
 app.use(`/api/${apiVersion}/auth`, routes.authorization);
+app.use(`/api/${apiVersion}/answer`, routes.answer);
+app.use(`/api/${apiVersion}/progress`, routes.progress);
+app.use(`/api/${apiVersion}/question`, routes.question);
+app.use(`/api/${apiVersion}/questionnaire`, routes.questionnaire);
+
 app.use((req, res, next) => {
   const err = new Error(`Page Not Found - ${JSON.stringify(req.parsedQuery.href)}`);
   err.status = 404;
