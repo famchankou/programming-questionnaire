@@ -1,27 +1,27 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from './types';
+import {
+  REGISTRATION_REQUEST,
+  REGISTRATION_SUCCESS,
+  REGISTRATION_FAILURE,
+} from './types';
 
 const initialState = {
-  user: {},
-  isAuth: false,
   isRequesting: false,
   error: null,
 };
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_REQUEST:
+    case REGISTRATION_REQUEST:
       return {
         ...state,
         isRequesting: true,
       };
-    case LOGIN_SUCCESS:
+    case REGISTRATION_SUCCESS:
       return {
         ...state,
         isRequesting: false,
-        isAuth: true,
-        user: action.payload,
       };
-    case LOGIN_FAILURE:
+    case REGISTRATION_FAILURE:
       return {
         ...state,
         isRequesting: false,

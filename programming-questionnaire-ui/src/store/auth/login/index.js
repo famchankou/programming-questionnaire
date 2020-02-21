@@ -2,14 +2,13 @@ import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from './types';
 import api from 'services/api';
 import auth from 'utils/auth';
 
-export const loginFlow = ({ email, password }) => {
+export const loginFlow = ({ username, password }) => {
   return async dispatch => {
     dispatch(loginRequest());
     try {
-      const { token } = await api.post('auth/token', { email, password });
-      auth.setToken(token);
-      const { user } = auth.decodeToken(token);
-      dispatch(loginSuccess(user));
+      const { data } = await api.post('/api/v1/auth', { username, password });
+      await auth.setToken(data.token);
+      dispatch(loginSuccess(data.data.user));
     } catch (error) {
       dispatch(loginFailure(error));
     }
@@ -23,7 +22,7 @@ const loginRequest = () => ({
 const loginSuccess = user => ({
   type: LOGIN_SUCCESS,
   payload: {
-    user,
+    ...user,
   },
 });
 

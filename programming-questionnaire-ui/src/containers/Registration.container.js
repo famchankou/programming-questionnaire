@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
 import RegistrationFormComponent from 'components/RegistrationForm';
+import { registrationFlow } from 'store/auth/registration';
 
-// const mapStateToProps = state => ({
-//   isRequesting: state.auth.isRequesting,
-// });
+const mapStateToProps = state => ({
+  isRequesting: state.registration.isRequesting,
+});
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     loginUser: (email, password) => {
-//       dispatch(loginFlow(email, password));
-//     },
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    registerUser: values => {
+      dispatch(registrationFlow(values));
+    },
+  };
+};
 
-export default connect(null, null)(RegistrationFormComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationFormComponent);

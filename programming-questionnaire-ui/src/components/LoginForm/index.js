@@ -5,14 +5,14 @@ import { loginFormValidationSchema } from 'validations';
 
 const LoginFormComponent = ({ loginUser }) => {
   const initialValues = {
-    email: '',
+    username: '',
     password: '',
   };
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={loginFormValidationSchema}
-      onSubmit={({ email, password }) => loginUser(email, password)}
+      onSubmit={values => loginUser(values)}
     >
       {formikProps => <LoginForm {...formikProps} />}
     </Formik>

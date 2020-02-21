@@ -22,14 +22,14 @@ function LoginForm(props) {
             variant="outlined"
             margin="normal"
             fullWidth
-            id="email"
-            name="email"
-            autoComplete="email"
+            id="username"
+            name="username"
+            autoComplete="username"
             onChange={handleChange}
             onBlur={handleBlur}
-            error={touched.email && Boolean(errors.email)}
-            helperText={touched.email ? errors.email : ''}
-            label="Email"
+            error={touched.username && Boolean(errors.username)}
+            helperText={touched.username ? errors.username : ''}
+            label="Username"
             autoFocus
           />
           <TextField

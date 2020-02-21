@@ -13,9 +13,7 @@ const LoginFormComponent = ({ registerUser }) => {
     <Formik
       initialValues={initialValues}
       validationSchema={registrationFormValidationSchema}
-      onSubmit={({ username, email, password }) =>
-        registerUser(username, email, password)
-      }
+      onSubmit={values => registerUser(values)}
     >
       {formikProps => <RegistrationForm {...formikProps} />}
     </Formik>

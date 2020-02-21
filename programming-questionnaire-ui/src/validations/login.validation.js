@@ -1,9 +1,7 @@
 import { object, string } from 'yup';
 
 const loginFormValidationSchema = object().shape({
-  email: string()
-    .email('Email is invalid')
-    .required('Please, enter your email'),
+  username: string().required('Please, enter your username'),
   password: string().required('Please, enter your password'),
 });
 

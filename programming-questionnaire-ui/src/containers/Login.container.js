@@ -8,8 +8,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginUser: (email, password) => {
-      dispatch(loginFlow(email, password));
+    loginUser: values => {
+      dispatch(loginFlow(values));
     },
   };
 };

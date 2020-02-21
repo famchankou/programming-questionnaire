@@ -43,7 +43,6 @@ function LoginForm(props) {
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email ? errors.email : ''}
             label="Email"
-            autoFocus
           />
           <TextField
             variant="outlined"
