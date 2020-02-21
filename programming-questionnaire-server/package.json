@@ -1,0 +1,33 @@
+{
+  "name": "programming-questionnaire-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/app.js",
+    "build": "echo \"No build specified\" && exit 0",
+    "deploy": "echo \"No deploy specified\" && exit 0",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "nodemon": "^1.18.9",
+    "sequelize-cli": "^4.1.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "pg": "^7.7.1",
+    "sequelize": "^5.7.0",
+    "cookie-parser": "^1.4.3",
+    "jsonwebtoken": "^8.3.0",
+    "bcryptjs": "^2.4.3"
+  }
+}
