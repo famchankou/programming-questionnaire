@@ -32,7 +32,7 @@ app.use((req, res, next) => {
   next(err.message);
 });
 
-const eraseDatabaseOnSync = false;
+const eraseDatabaseOnSync = true;
 sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
   if (eraseDatabaseOnSync) {
     // erase tables data

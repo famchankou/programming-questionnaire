@@ -4,7 +4,7 @@ import { QuestionController } from '../controllers';
 
 const router = Router();
 
-router.post('/', QuestionController.create);
+router.post('/', checkToken, QuestionController.create);
 router.put('/:questionId', checkToken, QuestionController.update);
 router.delete('/:questionId', checkToken, QuestionController.delete);
 router.get('/:questionId', checkToken, QuestionController.get);

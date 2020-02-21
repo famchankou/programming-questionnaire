@@ -30,10 +30,10 @@ const progress = (sequelize, DataTypes) => {
       foreignKey: 'id',
       as: 'answers'
     });
-    Progress.hasOne(models.Questionnaire, {
-      foreignKey: 'id',
-      as: 'questionnaire'
-    })
+    // Progress.hasOne(models.Questionnaire, {
+    //   foreignKey: 'id',
+    //   as: 'questionnaire'
+    // });
     Progress.belongsTo(models.User, {
       foreignKey: 'id',
       onDelete: 'CASCADE',
