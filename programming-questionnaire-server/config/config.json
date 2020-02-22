@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "master123",
+    "database": "programming-questionnaire-server",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres",
+    "operatorsAliases": 0
+  }
+}

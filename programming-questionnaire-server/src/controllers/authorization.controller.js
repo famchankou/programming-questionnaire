@@ -23,26 +23,19 @@ export default class AuthorizationController {
         const token = JWT.sign(signUser, config.secret, { expiresIn: TOKEN_EXP_TIME });
   
         res.status(200).send({
-          code: 200,
           data: {
-            user: {
-              id: user.id,
-              email: user.email,
-              username: user.username
-            }
+            user: signUser
           },
           token: token
         });
       } else {
         res.status(404).send({
-          code: 404,
           message: 'User Not Found',
           data: null
         });
       }
     } catch (error) {
       res.status(404).send({
-        code: 500,
         message: `An error has occurred: ${error.message}`,
         data: null
       });

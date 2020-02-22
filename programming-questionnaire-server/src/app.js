@@ -3,10 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import express from 'express';
 
-import {
-  parseQueryParams,
-  parseCookie
-} from './middlewares';
+import { parseQueryParams, parseCookie } from './middlewares';
 import { sequelize } from './db-models';
 import routes from './routes';
 
@@ -27,12 +24,14 @@ app.use(`/api/${apiVersion}/question`, routes.question);
 app.use(`/api/${apiVersion}/questionnaire`, routes.questionnaire);
 
 app.use((req, res, next) => {
-  const err = new Error(`Page Not Found - ${JSON.stringify(req.parsedQuery.href)}`);
+  const err = new Error(
+    `Page Not Found - ${JSON.stringify(req.parsedQuery.href)}`,
+  );
   err.status = 404;
   next(err.message);
 });
 
-const eraseDatabaseOnSync = false;
+const eraseDatabaseOnSync = true;
 sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
   if (eraseDatabaseOnSync) {
     // erase tables data
