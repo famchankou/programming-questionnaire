@@ -1,29 +1,39 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Actions from 'store/errors/actions';
-import Message from 'components/atoms/Message';
+import { connect } from 'react-redux';
+import { clearMessage } from 'store/errors';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
-export default (page, left = false) => {
-  const errors = useSelector(state => state.errors);
-  const dispatch = useDispatch();
+const mapStateToProps = state => ({
+  errors: state.errors,
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    clearError: page => {
+      dispatch(clearMessage(page));
+    },
+  };
+};
+
+const Alert = props => {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+};
+
+export default page => {
+  console.log('PAGE', page);
   return WrappedComponent => {
-    const componentsErrorHOC = ({ clearError, ...props }) => {
+    const componentsErrorHOC = ({ errors, clearError, ...props }) => {
       const error = errors[page] || '';
       return (
         <>
-          {error ? (
-            <Message
-              text={error}
-              timeout={5000}
-              type="error"
-              left={left}
-              onClose={() => dispatch(Actions.Creators.clearErrorMessage(page))}
-            />
-          ) : null}
+          <Snackbar open={error} autoHideDuration={5000} onClose={() => clearError(page)}>
+            <Alert severity="error">{error}</Alert>
+          </Snackbar>
           <WrappedComponent {...props} />
         </>
       );
     };
-    return componentsErrorHOC;
+    return connect(mapStateToProps, mapDispatchToProps)(componentsErrorHOC);
   };
 };
