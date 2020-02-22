@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import RegistrationFormComponent from 'components/RegistrationForm';
+import withErrorMessage from 'components/HOCs/withError';
 import { registrationFlow } from 'store/auth/registration';
 
 const mapStateToProps = state => ({
@@ -14,4 +15,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegistrationFormComponent);
+export default withErrorMessage('registration')(
+  connect(mapStateToProps, mapDispatchToProps)(RegistrationFormComponent)
+);

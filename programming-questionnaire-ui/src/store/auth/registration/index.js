@@ -14,7 +14,7 @@ export const registrationFlow = ({ username, email, password }) => {
       dispatch(registrationSuccess());
       dispatch(push('/login'));
     } catch (error) {
-      dispatch(registrationFailure(error));
+      dispatch(registrationFailure(error, 'registration'));
     }
   };
 };
@@ -27,9 +27,10 @@ const registrationSuccess = () => ({
   type: REGISTRATION_SUCCESS,
 });
 
-const registrationFailure = error => ({
+const registrationFailure = (error, page) => ({
   type: REGISTRATION_FAILURE,
   payload: {
     error: error.message,
+    page,
   },
 });

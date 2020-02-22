@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import LoginFormComponent from 'components/LoginForm';
+import withErrorMessage from 'components/HOCs/withError';
 import { loginFlow } from 'store/auth/login';
 
 const mapStateToProps = state => ({
@@ -14,4 +15,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginFormComponent);
+export default withErrorMessage('login')(
+  connect(mapStateToProps, mapDispatchToProps)(LoginFormComponent)
+);
