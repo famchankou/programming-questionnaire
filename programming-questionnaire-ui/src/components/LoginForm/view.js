@@ -11,7 +11,7 @@ import styles from './styles';
 function LoginForm(props) {
   const { classes, errors, touched, handleChange, handleBlur, handleSubmit } = props;
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" className={classes.main} maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">

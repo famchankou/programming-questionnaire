@@ -1,48 +1,25 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import React, { useEffect } from 'react';
 import Table from 'components/common/Table';
+import PageTemplate from 'components/templates/PageTemplate';
+import withStyles from '@material-ui/core/styles/withStyles';
+import styles from './styles';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  main: {
-    display: 'flex',
-    padding: '20px',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-}));
-
-const MainPage = ({ username }) => {
-  const classes = useStyles();
+const MainPage = ({
+  loadQuestionaries,
+  selectQuestionary,
+  questionaries,
+  isRequesting,
+  classes,
+}) => {
+  useEffect(() => {
+    loadQuestionaries();
+  }, [loadQuestionaries]);
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Programming quizes
-          </Typography>
-          <Typography variant="h6">{username}</Typography>
-          <Button color="inherit">Logout</Button>
-        </Toolbar>
-      </AppBar>
-      <div className={classes.main}>
-        <Table />
-      </div>
-    </div>
+    <PageTemplate>
+      <Table data={questionaries} selectQuestionary={selectQuestionary} />
+    </PageTemplate>
   );
 };
 
-export default MainPage;
+export default withStyles(styles)(MainPage);
