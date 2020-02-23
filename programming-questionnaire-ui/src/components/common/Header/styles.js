@@ -7,6 +7,8 @@ const styles = theme => ({
   },
   title: {
     flexGrow: 1,
+    color: 'inherit',
+    textDecoration: 'none',
   },
 });
 

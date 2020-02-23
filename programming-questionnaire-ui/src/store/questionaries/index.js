@@ -16,7 +16,7 @@ export const loadQuestionaries = () => {
       const { data } = await api.get('/api/v1/questionnaire/all/questionnaires');
       dispatch(loadQuestionariesSuccess(data));
     } catch (error) {
-      dispatch(loadQuestionariesFailure(error));
+      dispatch(loadQuestionariesFailure(error, 'home'));
     }
   };
 };
@@ -57,10 +57,11 @@ const loadQuestionariesSuccess = data => ({
   },
 });
 
-const loadQuestionariesFailure = error => ({
+const loadQuestionariesFailure = (error, page) => ({
   type: LOAD_QUESTIONARIES_FAILURE,
   payload: {
     error: error.message,
+    page,
   },
 });
 

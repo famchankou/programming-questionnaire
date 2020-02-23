@@ -9,11 +9,13 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import withStyles from '@material-ui/core/styles/withStyles';
+import { Link } from 'react-router-dom';
 import styles from './styles';
 
 const HeaderComponent = ({ classes }) => {
   const username = useSelector(state => state.auth.user.username);
   const dispatch = useDispatch();
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -33,7 +35,7 @@ const HeaderComponent = ({ classes }) => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} component={Link} to="/">
             Programming quizes
           </Typography>
           <Typography>{username}</Typography>
@@ -62,7 +64,9 @@ const HeaderComponent = ({ classes }) => {
               open={open}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem component={Link} to="/profile">
+                Profile
+              </MenuItem>
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
           </div>
