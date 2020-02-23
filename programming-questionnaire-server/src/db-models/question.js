@@ -13,13 +13,13 @@ const question = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       description: DataTypes.TEXT,
       field: 'title',
-      allowNull: false,
+      allowNull: false
     },
     question: {
       type: DataTypes.STRING,
       description: DataTypes.TEXT,
       field: 'question',
-      allowNull: true,
+      allowNull: false
     },
     questionnaireId: {
       type: Sequelize.UUID,
@@ -29,15 +29,15 @@ const question = (sequelize, DataTypes) => {
       references: {
         model: 'questionnaires',
         key: 'id',
-        as: 'questionnaireId',
-      },
-    },
+        as: 'questionnaireId'
+      }
+    }
   });
 
   Question.associate = (models) => {
     Question.belongsTo(models.Questionnaire, {
       foreignKey: 'id',
-      onDelete: 'CASCADE',
+      onDelete: 'CASCADE'
     });
     Question.hasMany(models.Answer, {
       foreignKey: 'id',
