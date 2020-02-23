@@ -37,6 +37,11 @@ const answer = (sequelize, DataTypes) => {
       foreignKey: 'id',
       onDelete: 'CASCADE'
     });
+    Answer.belongsToMany(models.Progress, {
+      through: 'progress_answers',
+      as: 'progresses',
+      foreignKey: 'answer_id'
+    });
   };
 
   return Answer;

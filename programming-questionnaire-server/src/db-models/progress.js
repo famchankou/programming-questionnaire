@@ -34,13 +34,19 @@ const progress = (sequelize, DataTypes) => {
         as: 'questionnaireId'
       }
     }
+  }, {
+    indexes: [
+      {
+        fields: ['user_id', 'questionnaire_id'],
+        unique: {
+          args: true,
+          msg: 'Progress with such user and questionnaire already exist'
+        }
+      }
+    ]
   });
 
   Progress.associate = (models) => {
-    Progress.hasMany(models.Answer, {
-      foreignKey: 'id',
-      as: 'answers'
-    });
     Progress.belongsTo(models.Questionnaire, {
       foreignKey: 'id',
       onDelete: 'CASCADE',
@@ -48,6 +54,10 @@ const progress = (sequelize, DataTypes) => {
     Progress.belongsTo(models.User, {
       foreignKey: 'id',
       onDelete: 'CASCADE',
+    });
+    Progress.belongsToMany(models.Answer, {
+      through: 'progress_answers',
+      foreignKey: 'progress_id'
     });
   };
 

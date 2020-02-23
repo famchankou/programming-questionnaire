@@ -15,6 +15,7 @@ const models = {
   Question: sequelize.import('./question'),
   Answer: sequelize.import('./answer'),
   Progress: sequelize.import('./progress'),
+  ProgressAnswer: sequelize.import('./progress-answer')
 };
 
 Object.keys(models).forEach(key => {

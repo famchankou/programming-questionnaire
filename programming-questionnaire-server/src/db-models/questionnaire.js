@@ -16,7 +16,7 @@ const questionnaire = (sequelize, DataTypes) => {
       allowNull: false,
       unique: {
         args: true,
-        msg: 'Duplicate Questionnaire!'
+        msg: 'Duplicate Questionnaire'
       }
     },
     description: {
