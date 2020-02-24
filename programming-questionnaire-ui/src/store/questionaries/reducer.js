@@ -15,7 +15,7 @@ const initialState = {
   error: null,
 };
 
-const loginReducer = (state = initialState, action) => {
+const questionierReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_QUESTIONARIES_REQUEST:
       return {
@@ -62,4 +62,4 @@ const loginReducer = (state = initialState, action) => {
   }
 };
 
-export default loginReducer;
+export default questionierReducer;

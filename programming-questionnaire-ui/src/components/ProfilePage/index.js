@@ -2,10 +2,10 @@ import React from 'react';
 import PieChart from 'components/common/PieChart';
 import PageTemplate from 'components/templates/PageTemplate';
 
-const ProfilePage = () => {
+const ProfilePage = ({ categories }) => {
   return (
     <PageTemplate>
-      <PieChart />
+      <PieChart categories={categories} />
     </PageTemplate>
   );
 };

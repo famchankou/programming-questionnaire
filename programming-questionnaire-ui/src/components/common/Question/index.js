@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Radio from '@material-ui/core/Radio';
@@ -8,24 +8,20 @@ import Button from '@material-ui/core/Button';
 import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
 
-const answers = [
-  'ReactDOM.start()',
-  'React.render()',
-  'ReactDOM.render()',
-  'React.mount()',
-];
-
-const QuestionComponent = ({ classes, question, handleSubmit }) => {
-  const [checkedAnswer, setAnswer] = useState('');
-  const handleChange = event => {
-    setAnswer(event.target.value);
-  };
+const QuestionComponent = ({
+  classes,
+  question,
+  handleNext,
+  disabledNext,
+  checkedAnswer,
+  handleChange,
+}) => {
   return (
     <div className={classes.questionWrapper}>
       <Paper className={classes.paper}>
         <div className={classes.titleContainer}>
           <Typography component="h1" variant="h5">
-            {question}
+            {question.question}
           </Typography>
         </div>
         <RadioGroup
@@ -35,21 +31,19 @@ const QuestionComponent = ({ classes, question, handleSubmit }) => {
           onChange={handleChange}
           className={classes.answersContainer}
         >
-          {answers.map(answer => (
+          {question.answers.map(answer => (
             <FormControlLabel
-              value={answer}
+              value={answer.content}
               control={<Radio />}
-              label={answer}
-              key={answer}
+              label={answer.content}
+              key={answer.id}
             />
           ))}
         </RadioGroup>
         <Button
           variant="outlined"
-          disabled={!checkedAnswer}
-          onClick={() => {
-            console.log(checkedAnswer);
-          }}
+          disabled={!checkedAnswer || disabledNext}
+          onClick={handleNext}
         >
           Next question
         </Button>
