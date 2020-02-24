@@ -1,7 +1,5 @@
 # Programming Questionnaire Server
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
 Backend application for Questionnaire sandbox app.
   - PostgreSQL/Sequelize ORM
   - Node.js
