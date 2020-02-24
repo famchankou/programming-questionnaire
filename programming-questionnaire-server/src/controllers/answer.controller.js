@@ -1,5 +1,8 @@
 import models from '../db-models';
 
+/**
+ * Answer CRUD operations controller
+ */
 export default class AnswerController {
   static async create(req, res) {
     res.status(501).json('not implemented');
@@ -17,6 +20,12 @@ export default class AnswerController {
     res.status(501).json('not implemented');
   }
 
+  /**
+   * Get all Answers for the specified Question ID
+   * 
+   * @param {*} req 
+   * @param {*} res 
+   */
   static async getAll(req, res) {
     const questionId = req.params.questionId;
     

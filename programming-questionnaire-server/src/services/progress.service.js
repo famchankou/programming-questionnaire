@@ -2,6 +2,12 @@ import models from '../db-models';
 
 export default class ProgressService {
 
+  /**
+   * Updates progress record: adds new answer to the user progress
+   * 
+   * @param {*} progressId 
+   * @param {*} payload 
+   */
   static async updateCurrentUserProgress(progressId, payload) {
     const progress = await models.Progress.findByPk(`${progressId}`, {
       include: [{
@@ -23,6 +29,11 @@ export default class ProgressService {
     return progress;
   }
 
+  /**
+   * Returns combined progress: Progress, Answered Questions, Correct Answers
+   * 
+   * @param {*} userId 
+   */
   static async getCombinedProgress(userId) {
     const progresses = await models.Progress.findAll({
       where: {

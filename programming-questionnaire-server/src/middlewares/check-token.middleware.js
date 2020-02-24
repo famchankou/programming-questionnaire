@@ -1,6 +1,14 @@
 import JWT from 'jsonwebtoken';
 import config from '../config';
 
+/**
+ * Checks specified JWT to authenticate a user via Bearer approach
+ * Default token lifetime 86400
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
 const checkToken = (req, res, next) => {
   let token = (req.headers.authorization || '').replace('Bearer ', '');
 

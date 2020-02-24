@@ -1,7 +1,16 @@
 import models from '../db-models';
 import { ProgressService } from '../services';
 
+/**
+ * Progress CRUD operations controller
+ */
 export default class ProgressController {
+  /**
+   * Create Progress record
+   * 
+   * @param {*} req 
+   * @param {*} res 
+   */
   static async create(req, res) {
     const payload = req.body || {};
 
@@ -19,6 +28,12 @@ export default class ProgressController {
     }
   }
 
+  /**
+   * Update existing Progress record
+   * 
+   * @param {*} req 
+   * @param {*} res 
+   */
   static async update(req, res) {
     const progressId = req.params.progressId;
     const payload = req.body || {};
@@ -39,6 +54,12 @@ export default class ProgressController {
     res.status(501).json('not implemented');
   }
 
+  /**
+   * Get all Progresses for a specific User
+   * 
+   * @param {*} req 
+   * @param {*} res 
+   */
   static async getAll(req, res) {
     const userId = req.params.userId;
 

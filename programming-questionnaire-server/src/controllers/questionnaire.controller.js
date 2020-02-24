@@ -1,5 +1,8 @@
 import models from '../db-models';
 
+/**
+ * Questionnaire CRUD operations controller
+ */
 export default class QuestionnaireController {
   static async create(req, res) {
     res.status(501).json('not implemented');
@@ -13,6 +16,12 @@ export default class QuestionnaireController {
     res.status(501).json('not implemented');
   }
 
+  /**
+   * Get specific Questionnaire by ID
+   * 
+   * @param {*} req 
+   * @param {*} res 
+   */
   static async get(req, res) {
     try {
       const questionnaire = await models.Questionnaire.findByPk(`${req.params.questId}`);
@@ -25,6 +34,12 @@ export default class QuestionnaireController {
     }
   }
 
+  /**
+   * Get all Questionnaires
+   * 
+   * @param {*} req 
+   * @param {*} res 
+   */
   static async getAll(req, res) {
     try {
       const questionaries = await models.Questionnaire.findAll();

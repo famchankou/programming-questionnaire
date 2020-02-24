@@ -5,7 +5,16 @@ import config from '../config';
 
 const TOKEN_EXP_TIME = 86400;
 
+/**
+ * Auth CRUD operations controller
+ */
 export default class AuthorizationController {
+  /**
+   * Issue JWT to the existing user
+   * 
+   * @param {*} req 
+   * @param {*} res 
+   */
   static async auth(req, res) {
     try {
       const user = await models.User.findOne({
