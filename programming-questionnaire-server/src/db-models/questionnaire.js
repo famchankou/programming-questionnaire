@@ -16,21 +16,25 @@ const questionnaire = (sequelize, DataTypes) => {
       allowNull: false,
       unique: {
         args: true,
-        msg: 'Duplicate Questionnaire!'
+        msg: 'Duplicate Questionnaire'
       }
     },
     description: {
       type: DataTypes.STRING,
       description: DataTypes.TEXT,
       field: 'description',
-      allowNull: true,
+      allowNull: true
     }
   });
 
   Questionnaire.associate = (models) => {
     Questionnaire.hasMany(models.Question, {
       foreignKey: 'id',
-      as: 'questions',
+      as: 'questions'
+    });
+    Questionnaire.hasMany(models.Progress, {
+      foreignKey: 'id',
+      as: 'progresses'
     });
   };
 

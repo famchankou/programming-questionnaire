@@ -13,7 +13,7 @@ const answer = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       description: DataTypes.TEXT,
       field: 'content',
-      allowNull: false,
+      allowNull: false
     },
     isCorrect: {
       type: DataTypes.BOOLEAN,
@@ -27,15 +27,20 @@ const answer = (sequelize, DataTypes) => {
       references: {
         model: 'questions',
         key: 'id',
-        as: 'questionId',
-      },
+        as: 'questionId'
+      }
     }
   });
 
   Answer.associate = (models) => {
     Answer.belongsTo(models.Question, {
       foreignKey: 'id',
-      onDelete: 'CASCADE',
+      onDelete: 'CASCADE'
+    });
+    Answer.belongsToMany(models.Progress, {
+      through: 'progress_answers',
+      as: 'progresses',
+      foreignKey: 'answer_id'
     });
   };
 

@@ -16,7 +16,7 @@ const user = (sequelize, DataTypes) => {
       allowNull: false,
       unique: {
         args: true,
-        msg: 'Username already exist!'
+        msg: 'Username already exist'
       }
     },
     email: {
@@ -29,7 +29,7 @@ const user = (sequelize, DataTypes) => {
       },
       unique: {
         args: true,
-        msg: 'Email address already exist!'
+        msg: 'Email address already exist'
       }
     },
     password: {
@@ -43,7 +43,7 @@ const user = (sequelize, DataTypes) => {
   User.associate = (models) => {
     User.hasMany(models.Progress, {
       foreignKey: 'id',
-      as: 'progress',
+      as: 'progress'
     });
   };
 
