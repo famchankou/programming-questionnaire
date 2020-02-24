@@ -10,6 +10,14 @@ import Paper from '@material-ui/core/Paper';
 import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
 
+/**
+ * Table component for list of questionaries
+ * Click on the name to go to the question with answers
+ * @param {Array} data
+ * @param {Function} selectQuestionary
+ * @param {Object} classes
+ */
+
 const TableComponent = ({ data, selectQuestionary, classes }) => {
   return (
     <TableContainer component={Paper} className={classes.paper}>

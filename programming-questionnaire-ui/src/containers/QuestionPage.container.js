@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionPage from 'components/QuestionPage';
+import withErrorMessage from 'components/HOCs/withError';
 import { loadCurrentQuestionary } from 'store/questionaries';
 import { loadQuestions } from 'store/questions';
 
@@ -20,4 +21,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionPage);
+export default withErrorMessage('question')(
+  connect(mapStateToProps, mapDispatchToProps)(QuestionPage)
+);

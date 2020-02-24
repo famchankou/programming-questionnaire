@@ -1,3 +1,7 @@
+/**
+ * Service for auth token
+ */
+
 function getToken() {
   return localStorage.getItem('token');
 }

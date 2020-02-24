@@ -8,6 +8,11 @@ import Container from '@material-ui/core/Container';
 import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
 
+/**
+ * View of the login form
+ * @param {Object} props - formik props
+ */
+
 function LoginForm(props) {
   const { classes, errors, touched, handleChange, handleBlur, handleSubmit } = props;
   return (

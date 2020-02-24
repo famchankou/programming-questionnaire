@@ -1,9 +1,14 @@
+/**
+ * Axios config with functions
+ */
+
 import axios from 'axios';
 import apiConfig from './configure';
 
 axios.defaults.baseURL = apiConfig.getBaseUrl();
 axios.defaults.timeout = apiConfig.timeout;
 
+// set token to request header
 const setAuthTokenToHeader = token => {
   if (token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -12,15 +17,19 @@ const setAuthTokenToHeader = token => {
   }
 };
 
+// delete token from request
 const deleteAuthTokenFromHeader = () => {
   delete axios.defaults.headers.common.Authorization;
 };
 
+// set other headers
 const setHeaders = headers => {
   const defaultHeader = { 'Content-Type': 'application/json' };
   if (headers) return Object.assign(defaultHeader, headers);
   return defaultHeader;
 };
+
+// functions for request types
 
 const get = (url, headers) => {
   return axios.get(`${url}`, setHeaders(headers));

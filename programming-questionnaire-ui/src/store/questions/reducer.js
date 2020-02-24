@@ -4,6 +4,10 @@ import {
   LOAD_QUESTIONS_FAILURE,
 } from './types';
 
+/**
+ * Reducer for questions flow
+ */
+
 const initialState = {
   data: [],
   isRequesting: false,

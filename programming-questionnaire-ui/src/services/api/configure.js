@@ -1,3 +1,7 @@
+/**
+ * Configuration of the api
+ */
+
 const api = {
   url: process.env.REACT_APP_API_URI,
   suffix: '',

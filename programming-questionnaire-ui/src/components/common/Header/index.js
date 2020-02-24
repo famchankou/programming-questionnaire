@@ -12,21 +12,29 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
 import styles from './styles';
 
+/**
+ * Header component with username and profile avatar. 
+ * Click on avatar to logout or get to profile page
+ * Click on the title to go to the main page
+ * @param {object} classes
+ */
+
 const HeaderComponent = ({ classes }) => {
+  // Get username from redux-store
   const username = useSelector(state => state.auth.user.username);
   const dispatch = useDispatch();
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-
+  // handler to open menu 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
   };
-
+  // handler to close menu
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  // handler to logout
   const handleLogout = () => {
     dispatch(unauthorize());
   };

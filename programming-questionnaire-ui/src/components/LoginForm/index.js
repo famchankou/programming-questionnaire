@@ -3,6 +3,11 @@ import { Formik } from 'formik';
 import LoginForm from './view';
 import { loginFormValidationSchema } from 'validations';
 
+/**
+ * Login form with validation
+ * @param {Function} loginUser 
+ */
+
 const LoginFormComponent = ({ loginUser }) => {
   const initialValues = {
     username: '',

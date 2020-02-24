@@ -8,6 +8,10 @@ import {
   LOAD_CURRENT_QUESTIONARY_FAILURE,
 } from './types';
 
+/**
+ * Reducer for questionier flow
+ */
+
 const initialState = {
   data: [],
   selectedQuestionary: {},

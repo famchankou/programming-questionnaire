@@ -5,6 +5,10 @@ import {
 } from './types';
 import api from 'services/api';
 
+/**
+ * Redux action creators and dispatchers for questions flow
+ */
+
 export const loadQuestions = questId => {
   return async dispatch => {
     dispatch(loadQuestionsRequest());

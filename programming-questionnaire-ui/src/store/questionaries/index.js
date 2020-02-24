@@ -9,6 +9,10 @@ import {
 } from './types';
 import api from 'services/api';
 
+/**
+ * Redux action creators and dispatchers for questionaries flow
+ */
+
 export const loadQuestionaries = () => {
   return async dispatch => {
     dispatch(loadQuestionariesRequest());

@@ -3,6 +3,10 @@ import { push } from 'connected-react-router';
 import api from 'services/api';
 import auth from 'utils/auth';
 
+/**
+ * Redux action creators and dispatchers for login flow
+ */
+
 export const loginFlow = ({ username, password }) => {
   return async dispatch => {
     dispatch(loginRequest());

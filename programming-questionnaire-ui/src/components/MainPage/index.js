@@ -4,13 +4,14 @@ import PageTemplate from 'components/templates/PageTemplate';
 import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
 
-const MainPage = ({
-  loadQuestionaries,
-  selectQuestionary,
-  questionaries,
-  isRequesting,
-  classes,
-}) => {
+/**
+ * Main page with table of list of questionaries
+ * @param {Function} loadQuestionaries
+ * @param {Function} selectQuestionary
+ * @param {Array} questionaries
+ */
+
+const MainPage = ({ loadQuestionaries, selectQuestionary, questionaries }) => {
   useEffect(() => {
     loadQuestionaries();
   }, [loadQuestionaries]);
