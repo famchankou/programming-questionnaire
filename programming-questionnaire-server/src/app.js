@@ -15,8 +15,6 @@ import routes from './routes';
 const app = express();
 const apiVersion = 'v1';
 
-console.log(swaggerDocument);
-
 // Swagger Docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
