@@ -2,6 +2,8 @@ import 'dotenv/config';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import express from 'express';
+import * as swaggerUi from 'swagger-ui-express';
+import * as swaggerDocument from '../swagger/swagger.json';
 
 import {
   parseQueryParams,
@@ -12,6 +14,11 @@ import routes from './routes';
 
 const app = express();
 const apiVersion = 'v1';
+
+console.log(swaggerDocument);
+
+// Swagger Docs
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Middlewares
 app.use(cors());
