@@ -1,5 +1,4 @@
 import models from '../db-models';
-import BC from 'bcryptjs';
 
 export default class ProgressController {
   static async create(req, res) {
@@ -70,14 +69,14 @@ export default class ProgressController {
       const progresses = await models.Progress.findAll();
 
       if (progresses) {
-        res.status(200).send(progresses);
+        res.status(200).json(progresses);
       } else {
-        res.status(404).send({
+        res.status(404).json({
           message: 'No records',
         });
       }
     } catch (error) {
-      res.status(400).send({
+      res.status(400).json({
         message: `${error.message}`,
       });
     }

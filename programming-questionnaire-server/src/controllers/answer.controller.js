@@ -1,21 +1,20 @@
 import models from '../db-models';
-import BC from 'bcryptjs';
 
 export default class AnswerController {
   static async create(req, res) {
-    res.json('');
+    res.status(501).json('not implemented');
   }
 
   static async update(req, res) {
-    res.json('');
+    res.status(501).json('not implemented');
   }
 
   static async delete(req, res) {
-    res.json('');
+    res.status(501).json('not implemented');
   }
 
   static async get(req, res) {
-    res.json('');
+    res.status(501).json('not implemented');
   }
 
   static async getAll(req, res) {
@@ -29,9 +28,9 @@ export default class AnswerController {
       });
 
       if (answers) {
-        res.status(200).send(answers);
+        res.status(200).json(answers);
       } else {
-        res.status(404).send({
+        res.status(400).json({
           message: 'No records',
         });
       }

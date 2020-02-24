@@ -29,11 +29,11 @@ const questionnaire = (sequelize, DataTypes) => {
 
   Questionnaire.associate = (models) => {
     Questionnaire.hasMany(models.Question, {
-      foreignKey: 'id',
+      foreignKey: 'questionnaireId',
       as: 'questions'
     });
     Questionnaire.hasMany(models.Progress, {
-      foreignKey: 'id',
+      foreignKey: 'questionnaireId',
       as: 'progresses'
     });
   };
