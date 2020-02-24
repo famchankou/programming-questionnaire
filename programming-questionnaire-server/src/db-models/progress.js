@@ -1,6 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
 import Sequelize from 'sequelize';
 
+/**
+ * Progress ORM model
+ * 
+ * @param {*} sequelize 
+ * @param {*} DataTypes 
+ */
 const progress = (sequelize, DataTypes) => {
   const Progress = sequelize.define('progress', {
     id: {

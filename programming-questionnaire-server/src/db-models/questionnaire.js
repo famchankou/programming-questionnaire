@@ -1,6 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
 import Sequelize from 'sequelize';
 
+/**
+ * Questionnaire ORM model
+ * 
+ * @param {*} sequelize 
+ * @param {*} DataTypes 
+ */
 const questionnaire = (sequelize, DataTypes) => {
   const Questionnaire = sequelize.define('questionnaire', {
     id: {
