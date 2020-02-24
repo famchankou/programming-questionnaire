@@ -27,13 +27,7 @@ export default class AnswerController {
         }
       });
 
-      if (answers) {
-        res.status(200).json(answers);
-      } else {
-        res.status(400).json({
-          message: 'No records',
-        });
-      }
+      res.status(200).json(answers);
     } catch (error) {
       res.status(400).send({
         message: `${error.message}`,

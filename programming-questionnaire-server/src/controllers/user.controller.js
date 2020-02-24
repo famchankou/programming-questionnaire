@@ -5,7 +5,10 @@ export default class UserController {
   static async create(req, res) {
     try {
       const user = await models.User
-        .create({ ...req.body, password: BC.hashSync(req.body.password, BC.genSaltSync(10)) });
+        .create({
+          ...req.body,
+          password: BC.hashSync(req.body.password, BC.genSaltSync(10))
+        });
 
       res.status(201).json(user);
     } catch (error) {

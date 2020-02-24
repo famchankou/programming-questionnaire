@@ -17,13 +17,7 @@ export default class QuestionnaireController {
     try {
       const questionnaire = await models.Questionnaire.findByPk(`${req.params.questId}`);
 
-      if (questionnaire) {
-        res.status(200).json(questionnaire);
-      } else {
-        res.status(400).json({
-          message: 'No records',
-        });
-      }
+      res.status(200).json(questionnaire);
     } catch (error) {
       res.status(400).json({
         message: `${error.message}`,
@@ -35,13 +29,7 @@ export default class QuestionnaireController {
     try {
       const questionaries = await models.Questionnaire.findAll();
 
-      if (questionaries) {
-        res.status(200).json(questionaries);
-      } else {
-        res.status(404).json({
-          message: 'No records',
-        });
-      }
+      res.status(200).json(questionaries);
     } catch (error) {
       res.status(400).json({
         message: `${error.message}`,

@@ -19,13 +19,7 @@ export default class QuestionController {
     try {
       const question = await models.Question.findByPk(`${questionId}`);
 
-      if (question) {
-        res.status(200).json(question);
-      } else {
-        res.status(400).json({
-          message: 'No records',
-        });
-      }
+      res.status(200).json(question);
     } catch (error) {
       res.status(400).send({
         message: `${error.message}`,
@@ -47,13 +41,7 @@ export default class QuestionController {
         }]
       });
 
-      if (items) {
-        res.status(200).json(items);
-      } else {
-        res.status(404).json({
-          message: 'No records',
-        });
-      }
+      res.status(200).json(items);
     } catch (error) {
       res.status(400).json({
         message: `${error.message}`,
