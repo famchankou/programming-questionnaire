@@ -40,7 +40,7 @@ const question = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
     Question.hasMany(models.Answer, {
-      foreignKey: 'id',
+      foreignKey: 'questionId',
       as: 'answers'
     });
   };

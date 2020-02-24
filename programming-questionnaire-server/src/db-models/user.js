@@ -42,7 +42,7 @@ const user = (sequelize, DataTypes) => {
 
   User.associate = (models) => {
     User.hasMany(models.Progress, {
-      foreignKey: 'id',
+      foreignKey: 'userId',
       as: 'progress'
     });
   };

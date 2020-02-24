@@ -5,20 +5,25 @@ export default class UserController {
   static async create(req, res) {
     try {
       const user = await models.User
-        .create({ ...req.body, password: BC.hashSync(req.body.password, BC.genSaltSync(10)) });
+        .create({
+          ...req.body,
+          password: BC.hashSync(req.body.password, BC.genSaltSync(10))
+        });
 
-      res.status(201).send(user);
+      res.status(201).json(user);
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(400).json(error.message);
     }
   }
 
   static async update(req, res) {
+    const userId = req.params.userId;
+
     try {
-      const user = await models.User.findByPk(`${req.params.userId}` || '');
+      const user = await models.User.findByPk(`${userId}`);
 
       if (!user) {
-        res.status(404).send({
+        res.status(404).json({
           message: 'User Not Found',
         });
       } else {
@@ -28,44 +33,46 @@ export default class UserController {
             email: req.body.email || user.email,
             password: req.body.password ? BC.hashSync(req.body.password, BC.genSaltSync(10)) : user.password,
           });
-       
-        res.status(200).send();
+
+        res.status(200).json();
       }
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(400).json(error.message);
     }
   }
 
   static async delete(req, res) {
+    const userId = req.params.userId;
+
     try {
       await models.User
         .destroy({
           where: {
-            id: req.params.userId
+            id: userId
           }
         });
 
-      res.status(204).send();
+      res.status(204).json();
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(400).json(error.message);
     }
   }
 
   static async get(req, res) {
+    const userId = req.params.userId;
+
     try {
-      const user = await models.User.findByPk(`${req.params.userId}` || '');
+      const user = await models.User.findByPk(`${userId}`);
 
       if (user) {
-        res.status(200).send(user);
+        res.status(200).json(user);
       } else {
-        res.status(404).send({
+        res.status(404).json({
           message: 'User Not Found',
         });
       }
     } catch (error) {
-      res.status(400).send({
-        message: `Invalid User ID: ${error.message}`,
-      });
+      res.status(400).json(`${error.message}`);
     }
   }
 }
