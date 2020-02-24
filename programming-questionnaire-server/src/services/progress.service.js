@@ -41,14 +41,16 @@ export default class ProgressService {
           as: 'questions'
         }]
       });
+      const correctAnswers = [...progress.answers].filter(answer => answer.isCorrect);
+      const filterQuestions = question => [...progress.answers].map(answer => answer.questionId).indexOf(question.id) !== -1;
 
       return {
         progressId: progress.id,
         userId: progress.userId,
         questionnaireTitle: quest.title,
         questionnaireId: progress.questionnaireId,
-        correctAnswers: [...progress.answers].filter(answer => answer.isCorrect),
-        answeredQuestions: [...quest.questions],
+        correctAnswers: correctAnswers,
+        answeredQuestions: [...quest.questions.filter(filterQuestions)],
         isComplete: progress.isComplete
       };
     };
