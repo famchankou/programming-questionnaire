@@ -4,7 +4,13 @@ import HighchartsReact from 'highcharts-react-official';
 import HC_more from 'highcharts/highcharts-more';
 HC_more(Highcharts);
 
+/**
+ * PieChart component for pie chart
+ * @param {Array} categories
+ */
+
 const PieChartComponent = ({ categories }) => {
+  // options object for chart
   const options = {
     chart: {
       polar: true,

@@ -7,6 +7,10 @@ import questionsReducer from 'store/questions/reducer';
 import errorReducer from 'store/errors/reducer';
 import history from './history';
 
+/**
+ * Root reducer
+ */
+
 const reducers = {
   router: connectRouter(history),
   auth: loginReducer,

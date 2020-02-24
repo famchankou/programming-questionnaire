@@ -1,5 +1,9 @@
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from './types';
 
+/**
+ * Reducer for login flow
+ */
+
 const initialState = {
   user: {},
   isAuth: false,

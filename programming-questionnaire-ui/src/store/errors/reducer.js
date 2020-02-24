@@ -1,3 +1,7 @@
+/**
+ * Error reducer for watch all actions with faliure actions
+ */
+
 const INITIAL_STATE = {};
 const errorReducer = (state = INITIAL_STATE, { type, payload }) => {
   const { page, error = '' } = payload || {};

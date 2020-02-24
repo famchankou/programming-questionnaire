@@ -4,6 +4,10 @@ import {
   REGISTRATION_FAILURE,
 } from './types';
 
+/**
+ * Reducer for registration flow
+ */
+
 const initialState = {
   isRequesting: false,
   error: null,

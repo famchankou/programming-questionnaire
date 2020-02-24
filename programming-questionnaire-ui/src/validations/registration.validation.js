@@ -1,5 +1,9 @@
 import { object, string } from 'yup';
 
+/**
+ * Validation schema for registration
+ */
+
 const registrationFormValidationSchema = object().shape({
   username: string().required('Please, enter your username'),
   email: string()

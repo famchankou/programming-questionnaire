@@ -6,6 +6,10 @@ import {
 import { push } from 'connected-react-router';
 import api from 'services/api';
 
+/**
+ * Redux action creators and dispatchers for registration flow
+ */
+
 export const registrationFlow = ({ username, email, password }) => {
   return async dispatch => {
     dispatch(registrationRequest());

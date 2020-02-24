@@ -8,6 +8,17 @@ import Button from '@material-ui/core/Button';
 import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
 
+/**
+ * Question component for show questions
+ * Click button for next question
+ * @param {Object} classes
+ * @param {Object} question
+ * @param {Function} handleNext
+ * @param {Boolean} disabledNext
+ * @param {String} checkedAnswer
+ * @param {Function} handleChange
+ */
+
 const QuestionComponent = ({
   classes,
   question,

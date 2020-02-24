@@ -4,6 +4,11 @@ import { clearMessage } from 'store/errors';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
+/**
+ * Error HOC for showing alert message if it will be error from server
+ * @param {String} page 
+ */
+
 const mapStateToProps = state => ({
   errors: state.errors,
 });
@@ -21,7 +26,6 @@ const Alert = props => {
 };
 
 export default page => {
-  console.log('PAGE', page);
   return WrappedComponent => {
     const componentsErrorHOC = ({ errors, clearError, ...props }) => {
       const error = errors[page] || '';
