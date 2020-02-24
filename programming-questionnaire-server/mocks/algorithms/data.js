@@ -12,14 +12,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'What is the worst case run-time complexity of binary search algorithm?',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Ο(n2)',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -27,7 +27,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Ο(nlog n)',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -35,7 +35,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Ο(n3)',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -43,7 +43,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Ο(n)',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -54,14 +54,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'A circular linked list can be used for ',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Stack',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -69,7 +69,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Queue',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -77,7 +77,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Both Stack & Queue',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -85,7 +85,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Neither Stack or Queue',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -96,14 +96,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'The following formular is of: left_subtree (keys)  ≤  node (key)  ≤  right_subtree (keys)',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Bianry Tree',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -111,7 +111,15 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Complete Binary Tree',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'Binary Search Tree',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -119,15 +127,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'All of the above',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -138,14 +138,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'Maximum degree of any vertex in a simple graph of vertices n is',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '2n - 1',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -153,7 +153,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'n',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -161,33 +161,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: true,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-      ]
-    }),
-    settleQuestionAndAnswers(uuidv4(), {
-      id: null,
-      questionnaire_id: null,
-      title: 'Algorithms',
-      question: '',
-      updatedAt: new Date(),
-      createdAt: new Date(),
-      __answers__: [
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'n + 1',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -195,23 +169,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'n - 1',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -222,14 +180,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'What about recursion is true in comparison with iteration?',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'very expensive in terms of memory.',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -237,7 +195,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'low performance.',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -245,33 +203,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: true,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-      ]
-    }),
-    settleQuestionAndAnswers(uuidv4(), {
-      id: null,
-      questionnaire_id: null,
-      title: 'Algorithms',
-      question: '',
-      updatedAt: new Date(),
-      createdAt: new Date(),
-      __answers__: [
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'every recursive program can be written with iteration too.',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -279,23 +211,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'all of the above are true!',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -306,14 +222,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'How many swaps are required to sort the given array using bubble sort - { 2, 5, 1, 3, 4}',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '4',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -321,7 +237,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '5',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -329,7 +245,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '6',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -337,7 +253,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '7',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -348,14 +264,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'Which of the following uses memoization?',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Greedy approach',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -363,7 +279,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Divide and conquer approach',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -371,49 +287,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: true,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-      ]
-    }),
-    settleQuestionAndAnswers(uuidv4(), {
-      id: null,
-      questionnaire_id: null,
-      title: 'Algorithms',
-      question: '',
-      updatedAt: new Date(),
-      createdAt: new Date(),
-      __answers__: [
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'Dynamic programming approach',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -421,7 +295,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'None of the above!',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -432,14 +306,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'Which of the following algorithm cannot be desiged without recursion?',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Tower of Hanoi',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -447,7 +321,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Fibonacci Series',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -455,7 +329,33 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Tree Traversal',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'None of the above',
+          is_correct: true,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+      ]
+    }),
+    settleQuestionAndAnswers(uuidv4(), {
+      id: null,
+      questionnaire_id: null,
+      title: 'Algorithms',
+      question: 'Shell sort uses',
+      updatedAt: new Date(),
+      createdAt: new Date(),
+      __answers__: [
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'insertion sort',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -463,7 +363,23 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'merge sort',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'selection sort',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'quick sort',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -474,22 +390,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'Which of the following algorithm does not divide the list?',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'linear search',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -497,7 +405,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'binary search',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -505,7 +413,15 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'merge sort',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'quick sort',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -516,14 +432,30 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'A binary search tree whose left subtree and right subtree differ in hight by at most 1 unit is called?',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Lemma tree',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'Redblack tree',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'AVL tree',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -531,23 +463,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
-          is_correct: false,
-          updatedAt: new Date(),
-          createdAt: new Date()
-        },
-        {
-          id: uuidv4(),
-          question_id: null,
-          content: '',
+          content: 'None of the above',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -558,14 +474,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'The number of comparisons done by sequential search is',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '(N/2) + 1',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -573,7 +489,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '(N + 1)/2',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -581,7 +497,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '(N - 1)/2',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -589,7 +505,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: '(N - 2)/2',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -600,14 +516,14 @@ const generateItems = () => {
       id: null,
       questionnaire_id: null,
       title: 'Algorithms',
-      question: '',
+      question: 'Which of the following data structure store the homogeneous data elements?',
       updatedAt: new Date(),
       createdAt: new Date(),
       __answers__: [
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Lists',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -615,7 +531,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Pointers',
           is_correct: false,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -623,7 +539,7 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Recrods',
           is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
@@ -631,8 +547,92 @@ const generateItems = () => {
         {
           id: uuidv4(),
           question_id: null,
-          content: '',
+          content: 'Arrays',
           is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+      ]
+    }),
+    settleQuestionAndAnswers(uuidv4(), {
+      id: null,
+      questionnaire_id: null,
+      title: 'Algorithms',
+      question: 'Linear arrays are also called',
+      updatedAt: new Date(),
+      createdAt: new Date(),
+      __answers__: [
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'One-dimensional array',
+          is_correct: true,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'Vertical array',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'Horizontal array',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'All of the above',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+      ]
+    }),
+    settleQuestionAndAnswers(uuidv4(), {
+      id: null,
+      questionnaire_id: null,
+      title: 'Algorithms',
+      question: 'A ......... does not keep track of address of every element in the list.',
+      updatedAt: new Date(),
+      createdAt: new Date(),
+      __answers__: [
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'Stack',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'Queue',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'String',
+          is_correct: false,
+          updatedAt: new Date(),
+          createdAt: new Date()
+        },
+        {
+          id: uuidv4(),
+          question_id: null,
+          content: 'Linear array',
+          is_correct: true,
           updatedAt: new Date(),
           createdAt: new Date()
         },
