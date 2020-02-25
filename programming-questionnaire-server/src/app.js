@@ -33,11 +33,15 @@ app.use(`/api/${apiVersion}/progress`, routes.progress);
 app.use(`/api/${apiVersion}/question`, routes.question);
 app.use(`/api/${apiVersion}/questionnaire`, routes.questionnaire);
 
+// Healthcheck endpoint
+app.use('/healthcheck', (req, res, next) => {
+  res.json({ status: 'UP' });
+});
+
 // Handle no route request
 app.use((req, res, next) => {
   const err = new Error(`Page Not Found - ${JSON.stringify(req.parsedQuery.href)}`);
-  err.status = 404;
-  next(err.message);
+  res.status(404).send({ error: err.message });
 });
 
 const alterDatabaseOnSync = true;

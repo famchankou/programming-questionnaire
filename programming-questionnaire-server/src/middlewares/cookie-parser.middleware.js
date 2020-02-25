@@ -1,9 +1,9 @@
 /**
  * Parses cookies and assigns the values to the request body
  * 
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
+ * @param {Object} req 
+ * @param {Object} res 
+ * @param {Function} next 
  */
 const parseCookie = (req, res, next) => {
   let cookies = req.headers.cookie;

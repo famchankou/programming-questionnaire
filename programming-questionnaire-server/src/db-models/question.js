@@ -3,9 +3,11 @@ import Sequelize from 'sequelize';
 
 /**
  * Question ORM model
+ * Refers to many Answers
+ * Belongs to one Questionnaire
  * 
- * @param {*} sequelize 
- * @param {*} DataTypes 
+ * @param {Object} sequelize 
+ * @param {Object} DataTypes 
  */
 const question = (sequelize, DataTypes) => {
   const Question = sequelize.define('question', {

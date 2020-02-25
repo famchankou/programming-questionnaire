@@ -9,9 +9,9 @@ const router = Router();
  * 
  * @name post/
  * @memberof module:routers/progress~progressesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.post('/', checkToken, ProgressController.create);
 
@@ -20,9 +20,9 @@ router.post('/', checkToken, ProgressController.create);
  * 
  * @name put/:progressId
  * @memberof module:routers/progress~progressesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.put('/:progressId', checkToken, ProgressController.update);
 
@@ -31,9 +31,9 @@ router.put('/:progressId', checkToken, ProgressController.update);
  * 
  * @name delete/:progressId
  * @memberof module:routers/progress~progressesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.delete('/:progressId', checkToken, ProgressController.delete);
 
@@ -42,9 +42,9 @@ router.delete('/:progressId', checkToken, ProgressController.delete);
  * 
  * @name get/:progressId
  * @memberof module:routers/progress~progressesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.get('/:progressId', checkToken, ProgressController.get);
 
@@ -53,9 +53,9 @@ router.get('/:progressId', checkToken, ProgressController.get);
  * 
  * @name get/user/:userId
  * @memberof module:routers/progress~progressesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.get('/user/:userId', checkToken, ProgressController.getAll);
 

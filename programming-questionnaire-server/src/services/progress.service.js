@@ -3,10 +3,11 @@ import models from '../db-models';
 export default class ProgressService {
 
   /**
-   * Updates progress record: adds new answer to the user progress
+   * Updates progress record: adds new answer to the user progress and set 
+   * complete state when necessary
    * 
-   * @param {*} progressId 
-   * @param {*} payload 
+   * @param {String} progressId 
+   * @param {Object} payload 
    */
   static async updateCurrentUserProgress(progressId, payload) {
     const progress = await models.Progress.findByPk(`${progressId}`, {
@@ -32,7 +33,7 @@ export default class ProgressService {
   /**
    * Returns combined progress: Progress, Answered Questions, Correct Answers
    * 
-   * @param {*} userId 
+   * @param {String} userId 
    */
   static async getCombinedProgress(userId) {
     const progresses = await models.Progress.findAll({
@@ -45,6 +46,12 @@ export default class ProgressService {
       }]
     });
 
+    /**
+     * Forms combined progerss for a certain user which includes data necessary for
+     * forming the charts statistics
+     * 
+     * @param {Object} progress 
+     */
     const generateCombinedProgress = async (progress) => {
       const quest = await models.Questionnaire.findByPk(progress.questionnaireId, {
         include: [{

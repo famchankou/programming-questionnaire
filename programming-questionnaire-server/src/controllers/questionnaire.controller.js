@@ -19,8 +19,8 @@ export default class QuestionnaireController {
   /**
    * Get specific Questionnaire by ID
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async get(req, res) {
     try {
@@ -37,8 +37,8 @@ export default class QuestionnaireController {
   /**
    * Get all Questionnaires
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async getAll(req, res) {
     try {

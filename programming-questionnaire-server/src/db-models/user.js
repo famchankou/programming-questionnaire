@@ -3,9 +3,10 @@ import Sequelize from 'sequelize';
 
 /**
  * User ORM model
+ * Refers to many Progresses
  * 
- * @param {*} sequelize 
- * @param {*} DataTypes 
+ * @param {Object} sequelize 
+ * @param {Object} DataTypes 
  */
 const user = (sequelize, DataTypes) => {
   const User = sequelize.define('user', {

@@ -8,8 +8,8 @@ export default class UserController {
   /**
    * Crete User record
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async create(req, res) {
     try {
@@ -28,8 +28,8 @@ export default class UserController {
   /**
    * Update User record
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async update(req, res) {
     const userId = req.params.userId;
@@ -59,8 +59,8 @@ export default class UserController {
   /**
    * Delete User record
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async delete(req, res) {
     const userId = req.params.userId;
@@ -82,8 +82,8 @@ export default class UserController {
   /**
    * Get specific User by ID
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async get(req, res) {
     const userId = req.params.userId;

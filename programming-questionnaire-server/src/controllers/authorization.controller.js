@@ -12,8 +12,8 @@ export default class AuthorizationController {
   /**
    * Issue JWT to the existing user
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async auth(req, res) {
     try {

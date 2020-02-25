@@ -27,3 +27,11 @@ $ npm run seeders:load
 Note: if flag 'eraseDatabaseOnSync' in the ~/src/app.js is set to true, then all DB Tables and Records
 will be flushed on any server restart
 Once the app is started for the first time, the sync method in ~/src/app.js will migrate the tables
+
+To open Swagger Docs, start the server and go to http://localhost:8080/api-docs
+
+To run the unit/e2e tests:
+
+```sh
+$ npm run test
+```

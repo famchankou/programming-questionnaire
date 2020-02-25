@@ -3,9 +3,10 @@ import Sequelize from 'sequelize';
 
 /**
  * Questionnaire ORM model
+ * Refers to many Questions/Progresses
  * 
- * @param {*} sequelize 
- * @param {*} DataTypes 
+ * @param {Object} sequelize 
+ * @param {Object} DataTypes 
  */
 const questionnaire = (sequelize, DataTypes) => {
   const Questionnaire = sequelize.define('questionnaire', {

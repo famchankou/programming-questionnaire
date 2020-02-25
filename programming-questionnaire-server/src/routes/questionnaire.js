@@ -9,9 +9,9 @@ const router = Router();
  * 
  * @name post/
  * @memberof module:routers/questionnaire~questionnairesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.post('/', checkToken, QuestionnaireController.create);
 
@@ -20,9 +20,9 @@ router.post('/', checkToken, QuestionnaireController.create);
  * 
  * @name put/:questId
  * @memberof module:routers/questionnaire~questionnairesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.put('/:questId', checkToken, QuestionnaireController.update);
 
@@ -31,9 +31,9 @@ router.put('/:questId', checkToken, QuestionnaireController.update);
  * 
  * @name delete/:questId
  * @memberof module:routers/questionnaire~questionnairesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.delete('/:questId', checkToken, QuestionnaireController.delete);
 
@@ -42,9 +42,9 @@ router.delete('/:questId', checkToken, QuestionnaireController.delete);
  * 
  * @name get/:questId
  * @memberof module:routers/questionnaire~questionnairesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.get('/:questId', checkToken, QuestionnaireController.get);
 
@@ -53,9 +53,9 @@ router.get('/:questId', checkToken, QuestionnaireController.get);
  * 
  * @name get/all/questionnaires
  * @memberof module:routers/questionnaire~questionnairesRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.get('/all/questionnaires', checkToken, QuestionnaireController.getAll);
 

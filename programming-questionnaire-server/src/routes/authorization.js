@@ -8,9 +8,9 @@ const router = Router();
  * 
  * @name post/
  * @memberof module:routers/authorization~authorizationsRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.post('/', AuthorizationController.auth);
 

@@ -8,8 +8,8 @@ export default class ProgressController {
   /**
    * Create Progress record
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async create(req, res) {
     const payload = req.body || {};
@@ -31,8 +31,8 @@ export default class ProgressController {
   /**
    * Update existing Progress record
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async update(req, res) {
     const progressId = req.params.progressId;
@@ -57,8 +57,8 @@ export default class ProgressController {
   /**
    * Get all Progresses for a specific User
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async getAll(req, res) {
     const userId = req.params.userId;

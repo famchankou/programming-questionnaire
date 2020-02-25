@@ -23,8 +23,8 @@ export default class AnswerController {
   /**
    * Get all Answers for the specified Question ID
    * 
-   * @param {*} req 
-   * @param {*} res 
+   * @param {Object} req 
+   * @param {Object} res 
    */
   static async getAll(req, res) {
     const questionId = req.params.questionId;

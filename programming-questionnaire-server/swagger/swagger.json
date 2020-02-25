@@ -109,6 +109,231 @@
                     }
                 }
             }
+        },
+        "/questionnaire/": {
+            "post": {
+                "summary": "Create a Questionnaire",
+                "operationId": "createQuestionnaires",
+                "tags": [
+                    "questionnaires"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Null response"
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/questionnaire/{questionnaireId}": {
+            "get": {
+                "summary": "Info for a specific Questionnaire",
+                "operationId": "getQuestionnaireById",
+                "tags": [
+                    "questionnaires"
+                ],
+                "parameters": [
+                    {
+                        "name": "questionnaireId",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the questionnaire to retrieve",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Expected response to a valid request",
+                        "schema": {
+                            "$ref": "#/definitions/Questionnaire"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a Questionnaire",
+                "operationId": "updateQuestionnaire",
+                "tags": [
+                    "questionnaires"
+                ],
+                "parameters": [
+                    {
+                        "name": "questionnaireId",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the questionnaire to retrieve",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "An empty response on successfull update",
+                        "schema": {
+                            "$ref": "#/definitions/Questionnaire"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a Questionnaire",
+                "operationId": "deleteQuestionnaire",
+                "tags": [
+                    "questionnaires"
+                ],
+                "parameters": [
+                    {
+                        "name": "questionnaireId",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the questionnaire to retrieve",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "An empty response on successfull update",
+                        "schema": {
+                            "$ref": "#/definitions/Questionnaire"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/question/": {
+            "post": {
+                "summary": "Create a Question",
+                "operationId": "createQuestion",
+                "tags": [
+                    "questions"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Null response"
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/question/{questionId}": {
+            "get": {
+                "summary": "Info for a specific Question",
+                "operationId": "getQuestionById",
+                "tags": [
+                    "questions"
+                ],
+                "parameters": [
+                    {
+                        "name": "questionId",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the question to retrieve",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Expected response to a valid request",
+                        "schema": {
+                            "$ref": "#/definitions/Question"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a Question",
+                "operationId": "updateQuestion",
+                "tags": [
+                    "questions"
+                ],
+                "parameters": [
+                    {
+                        "name": "questionId",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the question to retrieve",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "An empty response on successfull update",
+                        "schema": {
+                            "$ref": "#/definitions/Question"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a Question",
+                "operationId": "deleteQuestion",
+                "tags": [
+                    "questions"
+                ],
+                "parameters": [
+                    {
+                        "name": "questionId",
+                        "in": "path",
+                        "required": true,
+                        "description": "The id of the question to retrieve",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "An empty response on successfull update",
+                        "schema": {
+                            "$ref": "#/definitions/Question"
+                            
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -140,6 +365,143 @@
             "type": "array",
             "items": {
                 "$ref": "#/definitions/User"
+            }
+        },
+        "Questionnaire": {
+            "required": [
+                "id",
+                "title",
+                "description",
+                "createdAt",
+                "updatedAt"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "title": {
+                    "type": "string",
+                    "nullable": false,
+                    "uniqie": true
+                },
+                "description": {
+                    "type": "string",
+                    "nullable": true
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "questions": {
+                    "type": "array",
+                    "$ref": "#/definitions/Question"
+                }
+            }
+        },
+        "Question": {
+            "required": [
+                "id",
+                "title",
+                "question",
+                "questionnaireId"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "title": {
+                    "type": "string",
+                    "nullable": false
+                },
+                "description": {
+                    "type": "string",
+                    "nullable": false
+                },
+                "questionnaireId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "answers": {
+                    "type": "array",
+                    "$ref": "#/definitions/Answer"
+                }
+            }
+        },
+        "Answer": {
+            "required": [
+                "id",
+                "content",
+                "isCorrect",
+                "questionId"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "content": {
+                    "type": "string",
+                    "nullable": false
+                },
+                "isCorrect": {
+                    "type": "boolean",
+                    "nullable": false
+                },
+                "questionId": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            }
+        },
+        "Progress": {
+            "required": [
+                "id",
+                "isComplete",
+                "userId",
+                "questionnaireId"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "isComplete": {
+                    "type": "boolean",
+                    "nullable": false
+                },
+                "userId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "questionId": {
+                    "type": "string",
+                    "format": "uuid"
+                }
+            }
+        },
+        "ProgressAnswer": {
+            "required": [
+                "id",
+                "progressId",
+                "answerId"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "progressId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "answerId": {
+                    "type": "string",
+                    "format": "uuid"
+                }
             }
         },
         "Error": {

@@ -9,9 +9,9 @@ const router = Router();
  * 
  * @name post/
  * @memberof module:routers/question~questionsRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.post('/', checkToken, QuestionController.create);
 
@@ -20,9 +20,9 @@ router.post('/', checkToken, QuestionController.create);
  * 
  * @name put/:questionId
  * @memberof module:routers/question~questionsRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.put('/:questionId', checkToken, QuestionController.update);
 
@@ -31,9 +31,9 @@ router.put('/:questionId', checkToken, QuestionController.update);
  * 
  * @name delete/:questionId
  * @memberof module:routers/question~questionsRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.delete('/:questionId', checkToken, QuestionController.delete);
 
@@ -42,9 +42,9 @@ router.delete('/:questionId', checkToken, QuestionController.delete);
  * 
  * @name get/:questionId
  * @memberof module:routers/question~questionsRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.get('/:questionId', checkToken, QuestionController.get);
 
@@ -53,9 +53,9 @@ router.get('/:questionId', checkToken, QuestionController.get);
  * 
  * @name get/quest/:questId
  * @memberof module:routers/question~questionsRouter
- * @param {string} path - Express path
- * @param {callback} middleware - Express middleware
- * @param {callback} middleware - Express middleware
+ * @param {String} path - Express path
+ * @param {Function} middleware - Express middleware
+ * @param {Function} middleware - Express middleware
  */
 router.get('/quest/:questId', checkToken, QuestionController.getAll);
 
