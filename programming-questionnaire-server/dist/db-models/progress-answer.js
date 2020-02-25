@@ -1,15 +1,15 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _uuid = require("uuid");
 
 var _sequelize = _interopRequireDefault(require("sequelize"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * ProgressAnswer ORM model
@@ -18,18 +18,16 @@ var _sequelize = _interopRequireDefault(require("sequelize"));
  * @param {Object} sequelize 
  * @param {Object} DataTypes 
  */
-var progressAnswer = function progressAnswer(sequelize, DataTypes) {
-  var ProgressAnswer = sequelize.define('progress_answer', {
+const progressAnswer = (sequelize, DataTypes) => {
+  const ProgressAnswer = sequelize.define('progress_answer', {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: _sequelize["default"].UUID,
-      defaultValue: function defaultValue() {
-        return (0, _uuid.v4)();
-      }
+      type: _sequelize.default.UUID,
+      defaultValue: () => (0, _uuid.v4)()
     },
     progressId: {
-      type: _sequelize["default"].UUID,
+      type: _sequelize.default.UUID,
       field: 'progress_id',
       allowNull: false,
       references: {
@@ -39,7 +37,7 @@ var progressAnswer = function progressAnswer(sequelize, DataTypes) {
       }
     },
     answerId: {
-      type: _sequelize["default"].UUID,
+      type: _sequelize.default.UUID,
       field: 'answer_id',
       allowNull: false,
       references: {
@@ -58,5 +56,5 @@ var progressAnswer = function progressAnswer(sequelize, DataTypes) {
 };
 
 var _default = progressAnswer;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=progress-answer.js.map

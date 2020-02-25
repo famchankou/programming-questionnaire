@@ -1,15 +1,15 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _uuid = require("uuid");
 
 var _sequelize = _interopRequireDefault(require("sequelize"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Answer ORM model
@@ -18,15 +18,13 @@ var _sequelize = _interopRequireDefault(require("sequelize"));
  * @param {Object} sequelize 
  * @param {Object} DataTypes 
  */
-var answer = function answer(sequelize, DataTypes) {
-  var Answer = sequelize.define('answer', {
+const answer = (sequelize, DataTypes) => {
+  const Answer = sequelize.define('answer', {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: _sequelize["default"].UUID,
-      defaultValue: function defaultValue() {
-        return (0, _uuid.v4)();
-      }
+      type: _sequelize.default.UUID,
+      defaultValue: () => (0, _uuid.v4)()
     },
     content: {
       type: DataTypes.STRING,
@@ -40,7 +38,7 @@ var answer = function answer(sequelize, DataTypes) {
       allowNull: false
     },
     questionId: {
-      type: _sequelize["default"].UUID,
+      type: _sequelize.default.UUID,
       field: 'question_id',
       onDelete: 'CASCADE',
       references: {
@@ -51,7 +49,7 @@ var answer = function answer(sequelize, DataTypes) {
     }
   });
 
-  Answer.associate = function (models) {
+  Answer.associate = models => {
     Answer.belongsTo(models.Question, {
       foreignKey: 'id',
       onDelete: 'CASCADE'
@@ -67,5 +65,5 @@ var answer = function answer(sequelize, DataTypes) {
 };
 
 var _default = answer;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=answer.js.map

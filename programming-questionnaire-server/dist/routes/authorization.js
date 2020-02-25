@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _express = require("express");
 
 var _controllers = require("../controllers");
 
-var router = (0, _express.Router)();
+const router = (0, _express.Router)();
 /**
  * Route serving user authorization
  * 
@@ -22,5 +22,5 @@ var router = (0, _express.Router)();
 
 router.post('/', _controllers.AuthorizationController.auth);
 var _default = router;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=authorization.js.map

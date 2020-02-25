@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/models/progress.js"],"names":["Progress"],"mappings":";;;;;;;;;;;IAAqBA,Q,GACjB,oBAAc;AAAA;AAEb,C","sourcesContent":["export default class Progress {\r\n    constructor() {\r\n        \r\n    }\r\n}\r\n"],"file":"progress.js"}
+{"version":3,"sources":["../../src/models/progress.js"],"names":["Progress","constructor"],"mappings":";;;;;;;AAAe,MAAMA,QAAN,CAAe;AAC1BC,EAAAA,WAAW,GAAG,CAEb;;AAHyB","sourcesContent":["export default class Progress {\r\n    constructor() {\r\n        \r\n    }\r\n}\r\n"],"file":"progress.js"}

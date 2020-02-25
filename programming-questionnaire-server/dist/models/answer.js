@@ -1,17 +1,14 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+class Answer {
+  constructor() {}
 
-var Answer = function Answer() {
-  (0, _classCallCheck2["default"])(this, Answer);
-};
+}
 
-exports["default"] = Answer;
+exports.default = Answer;
 //# sourceMappingURL=answer.js.map

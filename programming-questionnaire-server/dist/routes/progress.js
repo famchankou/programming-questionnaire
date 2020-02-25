@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _express = require("express");
 
@@ -11,7 +11,7 @@ var _middlewares = require("../middlewares");
 
 var _controllers = require("../controllers");
 
-var router = (0, _express.Router)();
+const router = (0, _express.Router)();
 /**
  * Route serving progress creation
  * 
@@ -44,7 +44,7 @@ router.put('/:progressId', _middlewares.checkToken, _controllers.ProgressControl
  * @param {Function} middleware - Express middleware
  */
 
-router["delete"]('/:progressId', _middlewares.checkToken, _controllers.ProgressController["delete"]);
+router.delete('/:progressId', _middlewares.checkToken, _controllers.ProgressController.delete);
 /**
  * Route serving progress retrieval
  * 
@@ -68,5 +68,5 @@ router.get('/:progressId', _middlewares.checkToken, _controllers.ProgressControl
 
 router.get('/user/:userId', _middlewares.checkToken, _controllers.ProgressController.getAll);
 var _default = router;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=progress.js.map

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _express = require("express");
 
@@ -11,7 +11,7 @@ var _middlewares = require("../middlewares");
 
 var _controllers = require("../controllers");
 
-var router = (0, _express.Router)();
+const router = (0, _express.Router)();
 /**
  * Route serving answer creation
  * 
@@ -44,7 +44,7 @@ router.put('/:answerId', _middlewares.checkToken, _controllers.AnswerController.
  * @param {Function} middleware - Express middleware
  */
 
-router["delete"]('/:answerId', _middlewares.checkToken, _controllers.AnswerController["delete"]);
+router.delete('/:answerId', _middlewares.checkToken, _controllers.AnswerController.delete);
 /**
  * Route serving answer retrieval
  * 
@@ -68,5 +68,5 @@ router.get('/:answerId', _middlewares.checkToken, _controllers.AnswerController.
 
 router.get('/question/:questionId', _middlewares.checkToken, _controllers.AnswerController.getAll);
 var _default = router;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=answer.js.map

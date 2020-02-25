@@ -1,15 +1,15 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _uuid = require("uuid");
 
 var _sequelize = _interopRequireDefault(require("sequelize"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Progress ORM model
@@ -18,15 +18,13 @@ var _sequelize = _interopRequireDefault(require("sequelize"));
  * @param {Object} sequelize 
  * @param {Object} DataTypes 
  */
-var progress = function progress(sequelize, DataTypes) {
-  var Progress = sequelize.define('progress', {
+const progress = (sequelize, DataTypes) => {
+  const Progress = sequelize.define('progress', {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: _sequelize["default"].UUID,
-      defaultValue: function defaultValue() {
-        return (0, _uuid.v4)();
-      }
+      type: _sequelize.default.UUID,
+      defaultValue: () => (0, _uuid.v4)()
     },
     isComplete: {
       type: DataTypes.BOOLEAN,
@@ -34,7 +32,7 @@ var progress = function progress(sequelize, DataTypes) {
       allowNull: false
     },
     userId: {
-      type: _sequelize["default"].UUID,
+      type: _sequelize.default.UUID,
       onDelete: 'CASCADE',
       field: 'user_id',
       references: {
@@ -44,7 +42,7 @@ var progress = function progress(sequelize, DataTypes) {
       }
     },
     questionnaireId: {
-      type: _sequelize["default"].UUID,
+      type: _sequelize.default.UUID,
       field: 'questionnaire_id',
       onDelete: 'CASCADE',
       references: {
@@ -63,7 +61,7 @@ var progress = function progress(sequelize, DataTypes) {
     }]
   });
 
-  Progress.associate = function (models) {
+  Progress.associate = models => {
     Progress.belongsTo(models.Questionnaire, {
       foreignKey: 'id',
       onDelete: 'CASCADE'
@@ -82,5 +80,5 @@ var progress = function progress(sequelize, DataTypes) {
 };
 
 var _default = progress;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=progress.js.map

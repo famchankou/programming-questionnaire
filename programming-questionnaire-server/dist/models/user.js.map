@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/models/user.js"],"names":["User"],"mappings":";;;;;;;;;;;IAAqBA,I,GACjB,gBAAc;AAAA;AAEb,C","sourcesContent":["export default class User {\r\n    constructor() {\r\n        \r\n    }\r\n}\r\n"],"file":"user.js"}
+{"version":3,"sources":["../../src/models/user.js"],"names":["User","constructor"],"mappings":";;;;;;;AAAe,MAAMA,IAAN,CAAW;AACtBC,EAAAA,WAAW,GAAG,CAEb;;AAHqB","sourcesContent":["export default class User {\r\n    constructor() {\r\n        \r\n    }\r\n}\r\n"],"file":"user.js"}

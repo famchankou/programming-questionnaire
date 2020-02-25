@@ -1,15 +1,15 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _uuid = require("uuid");
 
 var _sequelize = _interopRequireDefault(require("sequelize"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Questionnaire ORM model
@@ -18,15 +18,13 @@ var _sequelize = _interopRequireDefault(require("sequelize"));
  * @param {Object} sequelize 
  * @param {Object} DataTypes 
  */
-var questionnaire = function questionnaire(sequelize, DataTypes) {
-  var Questionnaire = sequelize.define('questionnaire', {
+const questionnaire = (sequelize, DataTypes) => {
+  const Questionnaire = sequelize.define('questionnaire', {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: _sequelize["default"].UUID,
-      defaultValue: function defaultValue() {
-        return (0, _uuid.v4)();
-      }
+      type: _sequelize.default.UUID,
+      defaultValue: () => (0, _uuid.v4)()
     },
     title: {
       type: DataTypes.STRING,
@@ -46,7 +44,7 @@ var questionnaire = function questionnaire(sequelize, DataTypes) {
     }
   });
 
-  Questionnaire.associate = function (models) {
+  Questionnaire.associate = models => {
     Questionnaire.hasMany(models.Question, {
       foreignKey: 'questionnaireId',
       as: 'questions'
@@ -61,5 +59,5 @@ var questionnaire = function questionnaire(sequelize, DataTypes) {
 };
 
 var _default = questionnaire;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=questionnaire.js.map

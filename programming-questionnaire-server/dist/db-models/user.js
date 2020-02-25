@@ -1,15 +1,15 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _uuid = require("uuid");
 
 var _sequelize = _interopRequireDefault(require("sequelize"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * User ORM model
@@ -18,15 +18,13 @@ var _sequelize = _interopRequireDefault(require("sequelize"));
  * @param {Object} sequelize 
  * @param {Object} DataTypes 
  */
-var user = function user(sequelize, DataTypes) {
-  var User = sequelize.define('user', {
+const user = (sequelize, DataTypes) => {
+  const User = sequelize.define('user', {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: _sequelize["default"].UUID,
-      defaultValue: function defaultValue() {
-        return (0, _uuid.v4)();
-      }
+      type: _sequelize.default.UUID,
+      defaultValue: () => (0, _uuid.v4)()
     },
     username: {
       type: DataTypes.STRING,
@@ -59,7 +57,7 @@ var user = function user(sequelize, DataTypes) {
     }
   });
 
-  User.associate = function (models) {
+  User.associate = models => {
     User.hasMany(models.Progress, {
       foreignKey: 'userId',
       as: 'progress'
@@ -70,5 +68,5 @@ var user = function user(sequelize, DataTypes) {
 };
 
 var _default = user;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=user.js.map

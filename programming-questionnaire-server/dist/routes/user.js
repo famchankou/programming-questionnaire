@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _express = require("express");
 
@@ -11,7 +11,7 @@ var _middlewares = require("../middlewares");
 
 var _controllers = require("../controllers");
 
-var router = (0, _express.Router)();
+const router = (0, _express.Router)();
 /**
  * Route serving user creation
  * 
@@ -43,7 +43,7 @@ router.put('/:userId', _middlewares.checkToken, _controllers.UserController.upda
  * @param {callback} middleware - Express middleware
  */
 
-router["delete"]('/:userId', _middlewares.checkToken, _controllers.UserController["delete"]);
+router.delete('/:userId', _middlewares.checkToken, _controllers.UserController.delete);
 /**
  * Route serving user retrieval
  * 
@@ -56,5 +56,5 @@ router["delete"]('/:userId', _middlewares.checkToken, _controllers.UserControlle
 
 router.get('/:userId', _middlewares.checkToken, _controllers.UserController.get);
 var _default = router;
-exports["default"] = _default;
+exports.default = _default;
 //# sourceMappingURL=user.js.map
