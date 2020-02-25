@@ -4,7 +4,13 @@ import api from 'services/api';
 import auth from 'utils/auth';
 
 /**
- * Redux action creators and dispatchers for login flow
+ * Redux action creators for login flow
+ */
+
+/**
+ * Async thunk action creator for login user
+ * @param {String} username - username for login
+ * @param {String} password - password for login
  */
 
 export const loginFlow = ({ username, password }) => {
@@ -22,6 +28,11 @@ export const loginFlow = ({ username, password }) => {
   };
 };
 
+/**
+ * Async thunk action creator for logout user
+ * Removing token from local storage and from Authorization header in axios instance
+ */
+
 export const unauthorize = () => {
   return async dispatch => {
     auth.removeToken();
@@ -30,6 +41,10 @@ export const unauthorize = () => {
     dispatch(push('/login'));
   };
 };
+
+/**
+ * Sync action creators
+ */
 
 const loginRequest = () => ({
   type: LOGIN_REQUEST,

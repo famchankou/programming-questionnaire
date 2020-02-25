@@ -26,16 +26,20 @@ const QuestionPage = ({
   questions,
 }) => {
   // state of the component
+  // state for the disabling next button
   const [disabledNext, setNextButtonState] = useState(false);
+  // state for the current index of the question array
   const [currentIndex, setIndex] = useState(0);
+  // state for storing selected answer
   const [checkedAnswer, setAnswer] = useState('');
 
   useEffect(() => {
     //fetch questionary if it empty
     if (!questionaryName) loadCurrentQuestionary(match.params.questionareId);
-    // fetch questions if questionary id
+    // fetch questions if questionary id is not empty
     if (questionaryId) loadQuestions(questionaryId);
   }, [questionaryName, loadCurrentQuestionary, match, loadQuestions, questionaryId]);
+
   // handler of the next button to set next index and disable button if it last
   const handleNext = () => {
     let index = currentIndex + 1;
@@ -44,10 +48,12 @@ const QuestionPage = ({
     setIndex(index);
     setAnswer('');
   };
+
   // handler to set answer
   const handleChange = event => {
     setAnswer(event.target.value);
   };
+
   // get question by index
   const question = questions ? questions[currentIndex] : null;
 

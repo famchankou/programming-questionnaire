@@ -6,7 +6,7 @@ HC_more(Highcharts);
 
 /**
  * PieChart component for pie chart
- * @param {Array} categories
+ * @param {Array} categories - data for chart
  */
 
 const PieChartComponent = ({ categories }) => {

@@ -7,6 +7,10 @@ import history from './store/history';
 import './index.css';
 import App from './components/App';
 
+/**
+ * Root component with applaying store and browser history
+ */
+
 const RootApp = () => (
   <Provider store={store}>
     <Router history={history}>

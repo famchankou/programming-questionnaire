@@ -9,14 +9,14 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
 
 /**
- * Question component for show questions
+ * Question component for showing questions and answers
  * Click button for next question
- * @param {Object} classes
- * @param {Object} question
- * @param {Function} handleNext
- * @param {Boolean} disabledNext
- * @param {String} checkedAnswer
- * @param {Function} handleChange
+ * @param {Object} classes - material ui styles
+ * @param {Object} question - question object
+ * @param {Function} handleNext - handler for next button
+ * @param {Boolean} disabledNext - boolean value for disable next button if you don't pick answer or if it the last one
+ * @param {String} checkedAnswer - value of the checked answer
+ * @param {Function} handleChange - handler for select answer
  */
 
 const QuestionComponent = ({

@@ -4,14 +4,16 @@ import {
   REGISTRATION_FAILURE,
 } from './types';
 
-/**
- * Reducer for registration flow
- */
-
 const initialState = {
   isRequesting: false,
   error: null,
 };
+
+/**
+ * Reducer for registration flow
+ * @param {Object} state - initial state
+ * @param {Object} action - action with type and payload properties
+ */
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {

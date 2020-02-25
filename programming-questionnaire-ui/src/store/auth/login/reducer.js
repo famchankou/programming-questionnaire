@@ -1,15 +1,17 @@
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from './types';
 
-/**
- * Reducer for login flow
- */
-
 const initialState = {
   user: {},
   isAuth: false,
   isRequesting: false,
   error: null,
 };
+
+/**
+ * Reducer for login flow
+ * @param {Object} state - initial state
+ * @param {Object} action - action with type and payload properties
+ */
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {

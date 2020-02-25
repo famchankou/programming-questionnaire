@@ -6,7 +6,12 @@ import {
 import api from 'services/api';
 
 /**
- * Redux action creators and dispatchers for questions flow
+ * Redux action creators for questions flow
+ */
+
+/**
+ * Thunk action creator for fetching questions with answers by questionier id
+ * @param {String} questId - id of the selected questionier
  */
 
 export const loadQuestions = questId => {
@@ -20,6 +25,10 @@ export const loadQuestions = questId => {
     }
   };
 };
+
+/**
+ * Sync action creators
+ */
 
 const loadQuestionsRequest = () => ({
   type: LOAD_QUESTIONS_REQUEST,

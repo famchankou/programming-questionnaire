@@ -4,7 +4,7 @@ import PageTemplate from 'components/templates/PageTemplate';
 
 /**
  * Progile page for pie chart
- * @param {Array} categories
+ * @param {Array} categories - array of data for the chart
  */
 
 const ProfilePage = ({ categories }) => {

@@ -5,7 +5,7 @@ import { registrationFormValidationSchema } from 'validations';
 
 /**
  * Registration form with validation
- * @param {Function} registerUser - function to register user
+ * @param {Function} registerUser - function which dispatch register action in redux store
  */
 
 const LoginFormComponent = ({ registerUser }) => {

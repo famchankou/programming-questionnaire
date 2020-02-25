@@ -13,9 +13,9 @@ import styles from './styles';
 /**
  * Table component for list of questionaries
  * Click on the name to go to the question with answers
- * @param {Array} data
- * @param {Function} selectQuestionary
- * @param {Object} classes
+ * @param {Array} data - data of all questioniers array of objects with keys: name, description and id
+ * @param {Function} selectQuestionary - function for the select current questionary and set it value to the redux
+ * @param {Object} classes - material ui styles
  */
 
 const TableComponent = ({ data, selectQuestionary, classes }) => {

@@ -1,5 +1,5 @@
 /**
- * Axios config with functions
+ * Axios config with services
  */
 
 import axios from 'axios';
@@ -22,7 +22,7 @@ const deleteAuthTokenFromHeader = () => {
   delete axios.defaults.headers.common.Authorization;
 };
 
-// set other headers
+// set other headers if theirs are needed
 const setHeaders = headers => {
   const defaultHeader = { 'Content-Type': 'application/json' };
   if (headers) return Object.assign(defaultHeader, headers);
