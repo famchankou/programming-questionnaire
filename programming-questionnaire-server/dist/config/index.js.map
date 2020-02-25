@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/config/index.js"],"names":[],"mappings":";;;;;;eAAe;AACX,UAAQ,kCADG;AAEX,YAAU;AAFC,C","sourcesContent":["export default {\r\n    'name': 'Programming Questionnaire Server',\r\n    'secret': 'authsecretkey'\r\n};\r\n"],"file":"index.js"}
