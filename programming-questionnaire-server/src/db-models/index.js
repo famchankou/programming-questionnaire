@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-const sequelize;
+let sequelize;
 
 if (process.env.DATABASE_CONNECTION_STRING) {
   sequelize = new Sequelize(process.env.DATABASE_CONNECTION_STRING);
