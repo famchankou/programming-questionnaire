@@ -9,10 +9,17 @@ exports["default"] = exports.sequelize = void 0;
 
 var _sequelize = _interopRequireDefault(require("sequelize"));
 
-var sequelize = new _sequelize["default"](process.env.DATABASE, process.env.DATABASE_USER, process.env.DATABASE_PASSWORD, {
-  dialect: 'postgres'
-});
+var sequelize;
 exports.sequelize = sequelize;
+
+if (process.env.DATABASE_CONNECTION_STRING) {
+  exports.sequelize = sequelize = new _sequelize["default"](process.env.DATABASE_CONNECTION_STRING);
+} else {
+  exports.sequelize = sequelize = new _sequelize["default"](process.env.DATABASE, process.env.DATABASE_USER, process.env.DATABASE_PASSWORD, {
+    dialect: 'postgres'
+  });
+}
+
 var models = {
   User: sequelize["import"]('./user'),
   Questionnaire: sequelize["import"]('./questionnaire'),
