@@ -19,3 +19,14 @@ $ cd programming-questionnaire-ui
 $ npm install -d
 $ npm start
 ```
+
+### Documentation
+
+For view documentation run command
+
+```sh
+$ cd programming-questionnaire-ui
+$ npm run docs
+```
+
+After that open index.html in generated docs folder

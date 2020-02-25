@@ -9,9 +9,15 @@ import rootReducer from './reducer';
 
 const { getToken, decodeToken } = auth;
 
+/**
+ * Initial redux state
+ */
+
 const initialInfo = () => {
+  // get Token from local storage
   const token = getToken();
   if (token) {
+    // If token exists decode and set to request header and to the redux store
     const { id, username, email } = decodeToken(token);
     api.setAuthTokenToHeader(token);
     return {
@@ -31,11 +37,13 @@ const initialInfo = () => {
 
 const initialState = initialInfo();
 
+// logger and router middleware setup
 const middleWare =
   process.env.NODE_ENV !== 'production'
     ? [logger, routerMiddleware(history)]
     : routerMiddleware(history);
 
+// setup for redux extension in browser
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
   typeof window === 'object' &&

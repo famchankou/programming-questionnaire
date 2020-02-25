@@ -4,11 +4,6 @@ import { clearMessage } from 'store/errors';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-/**
- * Error HOC for showing alert message if it will be error from server
- * @param {String} page 
- */
-
 const mapStateToProps = state => ({
   errors: state.errors,
 });
@@ -21,9 +16,21 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+/**
+ * Alert component for the alert message
+ * @param {Object} props
+ */
+
 const Alert = props => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 };
+
+/**
+ * Error HOC for showing alert message if it will be error from server
+ * @param {String} page - value for the current page
+ * @param {Object} errors - errors object from redux store, which contains page key and alert message
+ * @param {Function} clearError - function that dispatches redux action to clear error in errors reducer after timeout
+ */
 
 export default page => {
   return WrappedComponent => {

@@ -1,5 +1,5 @@
 /**
- * Error reducer for watch all actions with faliure actions
+ * Error reducer for watch all actions with failure type
  */
 
 const INITIAL_STATE = {};

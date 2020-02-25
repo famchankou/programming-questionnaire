@@ -13,10 +13,10 @@ import { Link } from 'react-router-dom';
 import styles from './styles';
 
 /**
- * Header component with username and profile avatar. 
+ * Header component with username and profile avatar.
  * Click on avatar to logout or get to profile page
  * Click on the title to go to the main page
- * @param {object} classes
+ * @param {object} classes - material ui styles
  */
 
 const HeaderComponent = ({ classes }) => {
@@ -26,7 +26,7 @@ const HeaderComponent = ({ classes }) => {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  // handler to open menu 
+  // handler to open menu
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
   };

@@ -6,9 +6,9 @@ import styles from './styles';
 
 /**
  * Main page with table of list of questionaries
- * @param {Function} loadQuestionaries
- * @param {Function} selectQuestionary
- * @param {Array} questionaries
+ * @param {Function} loadQuestionaries - function which dispatch action for the fetching data from the API
+ * @param {Function} selectQuestionary - function which dispatch action for the selecting current questionary
+ * @param {Array} questionaries - array of questionaries from the API
  */
 
 const MainPage = ({ loadQuestionaries, selectQuestionary, questionaries }) => {

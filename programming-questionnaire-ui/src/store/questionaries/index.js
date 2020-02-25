@@ -10,7 +10,11 @@ import {
 import api from 'services/api';
 
 /**
- * Redux action creators and dispatchers for questionaries flow
+ * Redux action creators for questionaries flow
+ */
+
+/**
+ * Thunk action creator for fetching questionaries data
  */
 
 export const loadQuestionaries = () => {
@@ -25,11 +29,21 @@ export const loadQuestionaries = () => {
   };
 };
 
+/**
+ * Thunk action creator for select questionary
+ * @param {Object} questionary - object of the selected questionary
+ */
+
 export const selectQuestionary = questionary => {
   return async dispatch => {
     dispatch(selectQuestionarySuccess(questionary));
   };
 };
+
+/**
+ * Thunk action creator for fetching current questionary by id
+ * @param {String} id - id of the questionary
+ */
 
 export const loadCurrentQuestionary = id => {
   return async dispatch => {
@@ -42,6 +56,10 @@ export const loadCurrentQuestionary = id => {
     }
   };
 };
+
+/**
+ * Sync action creators
+ */
 
 const selectQuestionarySuccess = questionary => ({
   type: SELECT_QUESTIONARY,

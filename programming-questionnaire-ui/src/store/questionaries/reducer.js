@@ -8,16 +8,18 @@ import {
   LOAD_CURRENT_QUESTIONARY_FAILURE,
 } from './types';
 
-/**
- * Reducer for questionier flow
- */
-
 const initialState = {
   data: [],
   selectedQuestionary: {},
   isRequesting: false,
   error: null,
 };
+
+/**
+ * Reducer for questionier flow
+ * @param {Object} state - initial state
+ * @param {Object} action - action with type and payload properties
+ */
 
 const questionierReducer = (state = initialState, action) => {
   switch (action.type) {

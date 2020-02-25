@@ -4,15 +4,17 @@ import {
   LOAD_QUESTIONS_FAILURE,
 } from './types';
 
-/**
- * Reducer for questions flow
- */
-
 const initialState = {
   data: [],
   isRequesting: false,
   error: null,
 };
+
+/**
+ * Reducer for questions flow
+ * @param {Object} state - initial state
+ * @param {Object} action - action with type and payload properties
+ */
 
 const questionsReducer = (state = initialState, action) => {
   switch (action.type) {

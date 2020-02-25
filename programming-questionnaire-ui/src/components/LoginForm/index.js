@@ -5,7 +5,7 @@ import { loginFormValidationSchema } from 'validations';
 
 /**
  * Login form with validation
- * @param {Function} loginUser 
+ * @param {Function} loginUser - function which dispatch login action in redux store
  */
 
 const LoginFormComponent = ({ loginUser }) => {

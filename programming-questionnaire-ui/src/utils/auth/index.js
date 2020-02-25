@@ -2,16 +2,35 @@
  * Service for auth token
  */
 
+/**
+ * Funtion for get token from localstorage
+ */
+
 function getToken() {
   return localStorage.getItem('token');
 }
+
+/**
+ * Function for set token into local storage
+ * @param {String} token
+ */
+
 function setToken(token) {
   localStorage.setItem('token', token);
 }
 
+/**
+ * Function for removing token from localstorage
+ */
+
 function removeToken() {
   localStorage.removeItem('token');
 }
+
+/**
+ * Function for decoding jwt token
+ * @param {String} token
+ */
 
 function decodeToken(token) {
   const base64Url = token.split('.')[1];

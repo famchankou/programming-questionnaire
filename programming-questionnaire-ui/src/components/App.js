@@ -12,6 +12,10 @@ import {
 import withStyles from '@material-ui/core/styles/withStyles';
 import styles from './styles';
 
+/**
+ * Component of the application with routes
+ */
+
 const App = () => {
   const isAuth = useSelector(state => state.auth.isAuth);
   return (
