@@ -41,7 +41,7 @@ const initialState = initialInfo();
 const middleWare =
   process.env.NODE_ENV !== 'production'
     ? [logger, routerMiddleware(history)]
-    : routerMiddleware(history);
+    : [routerMiddleware(history)];
 
 // setup for redux extension in browser
 const composeEnhancers =
