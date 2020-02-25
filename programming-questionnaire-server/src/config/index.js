@@ -1,3 +1,4 @@
-import config from './config';
-
-export default config;
+export default {
+    'name': 'Programming Questionnaire Server',
+    'secret': 'authsecretkey'
+};

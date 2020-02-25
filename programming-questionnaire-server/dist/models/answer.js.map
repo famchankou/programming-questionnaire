@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/models/answer.js"],"names":["Answer"],"mappings":";;;;;;;;;;;IAAqBA,M,GACjB,kBAAc;AAAA;AAEb,C","sourcesContent":["export default class Answer {\r\n    constructor() {\r\n        \r\n    }\r\n}\r\n"],"file":"answer.js"}

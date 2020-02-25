@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/models/questionnaire.js"],"names":["Questionnaire"],"mappings":";;;;;;;;;;;IAAqBA,a,GACjB,yBAAc;AAAA;AAEb,C","sourcesContent":["export default class Questionnaire {\r\n    constructor() {\r\n        \r\n    }\r\n}\r\n"],"file":"questionnaire.js"}
